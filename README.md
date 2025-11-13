@@ -1,16 +1,16 @@
 # D-FLIPDLOP-NEGEDGE
 
-**AIM:**
+## AIM:
 
 To implement  D flipflop using verilog and validating their functionality using their functional tables
 
-**SOFTWARE REQUIRED:**
+## SOFTWARE REQUIRED:
 
 Quartus prime
 
-**THEORY**
+## THEORY
 
-**D Flip-Flop**
+### D Flip-Flop
 
 D flip-flop operates with only positive clock transitions or negative clock transitions. Whereas, D latch operates with enable signal. That means, the output of D flip-flop is insensitive to the changes in the input, D except for active transition of the clock signal. The circuit diagram of D flip-flop is shown in the following figure.
 
@@ -26,19 +26,45 @@ Therefore, D flip-flop always Hold the information, which is available on data i
 
 Next state of D flip-flop is always equal to data input, D for every positive transition of the clock signal. Hence, D flip-flops can be used in registers, shift registers and some of the counters.
 
-**Procedure**
+## Procedure
 
-/* write all the steps invloved */
+1) Define Module: Define a Verilog module for the D flip-flop with inputs (D, CLK) and outputs (Q, Q_bar).
 
-**PROGRAM**
+2) Declare Inputs and Outputs: Declare input and output ports for the module.
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+3) Implement Flip-Flop Logic: Write Verilog code to implement the D flip-flop logic based on its functional table. Use a synchronous always @(posedge CLK) block to trigger the flip-flop on the positive edge of the clock signal.
 
-**RTL LOGIC FOR FLIPFLOPS**
+4) Simulate Using Testbench: Write a Verilog testbench to simulate the behavior of the D flip-flop under different input conditions.
+
+5) Apply Input Stimuli: In the testbench, apply various combinations of input stimuli (D, CLK) to cover all possible input states.
+
+6) Verify Output Behavior: Verify that the output behavior of the D flip-flop matches the expected behavior defined by its functional table.
+
+7) Check for Race Conditions: Ensure that there are no race conditions or undefined states in the design by analyzing the timing and sequence of input changes.
 
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
+## PROGRAM
+
+Developed by: Sibhiraaj R
+RegisterNumber: 212224230268
+
+```
+module Exp_8(input D, input clk, output reg Q, output reg Qbar);
+    always @(posedge clk)
+    begin
+        Q <= D;         // On clock edge, Q follows D
+        Qbar <= ~Q;     // Complement of Q
+    end
+endmodule
+```
+
+### RTL LOGIC FOR FLIPFLOPS
+<img width="740" height="297" alt="image" src="https://github.com/user-attachments/assets/7ff4a7a2-075d-4eb1-b507-1a410306a106" />
 
 
-**RESULTS**
+### TIMING DIGRAMS FOR FLIP FLOPS
+<img width="1918" height="505" alt="image" src="https://github.com/user-attachments/assets/734eab12-9f61-49bc-b46e-d7fe79d91a06" />
+
+
+## RESULTS
+Thus the program to implement a D flipflop using verilog and validating their functionality using their functional tables.
